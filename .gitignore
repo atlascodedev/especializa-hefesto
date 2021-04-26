@@ -13,8 +13,7 @@
 # production
 /build
 
-.github
-
+.serviceAccount.json
 firebaseFunctionsEnv.json
 
 # misc

@@ -33,8 +33,8 @@ export const adonisImagePath: AdonisPath = {
 export const adonisConfig: AdonisConfig = {
   path: adonisImagePath,
   createBlur: true,
-  storageBucketPath: "portalbens-nextjs-hefesto.appspot.com",
+  storageBucketPath: "especializa-next-hefesto.appspot.com",
   baseCloudURL: "https://firebasestorage.googleapis.com/v0/b/",
 };
 
-// DONT FORGET TO REPLICATE CHANGES HERE AT THE ADONIS.CONFIG.TS FILE INSIDE THE ./SRC/CONFIG/
+// DONT FORGET TO REPLICATE CHANGES HERE AT THE ADONIS.CONFIG.TS FILE INSIDE THE ./FUNCTIONS/SRC/CONFIG/

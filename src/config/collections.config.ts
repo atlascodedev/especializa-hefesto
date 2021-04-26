@@ -305,7 +305,6 @@ const partnersCollection: DashboardItem = {
 };
 
 export const collections: Array<DashboardItem> = [
-  cardCollection,
   blogCollection,
   testimonialCollection,
   partnersCollection,

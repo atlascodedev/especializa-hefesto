@@ -1,17 +1,17 @@
 {
-  "projects": {
-    "default": "portalbens-nextjs-hefesto"
-  },
   "targets": {
-    "portalbens-nextjs-hefesto": {
+    "especializa-next-hefesto": {
       "hosting": {
-        "admin": [
-          "portalbens-admin"
-        ],
         "app": [
-          "portalbens-nextjs-hefesto"
+          "especialize-next-hefesto"
+        ],
+        "admin": [
+          "especializa-admin-app"
         ]
       }
     }
+  },
+  "projects": {
+    "default": "especializa-next-hefesto"
   }
 }

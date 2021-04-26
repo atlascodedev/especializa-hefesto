@@ -173,10 +173,10 @@ export const uploadAndOptimizeImage = (
 
     if (process.env.NODE_ENV !== "production") {
       requestURL =
-        "http://localhost:5001/portalbens-nextjs-hefesto/us-central1/api/adonis/optimize";
+        "http://localhost:5001/especializa-next-hefesto/us-central1/api/adonis/optimize";
     } else {
       requestURL =
-        "https://us-central1-portalbens-nextjs-hefesto.cloudfunctions.net/api/adonis/optimize";
+        "https://us-central1-especializa-next-hefesto.cloudfunctions.net/api/adonis/optimize";
     }
 
     Axios.post<AdonisImage, AxiosResponse<AdonisImage>>(requestURL, {
