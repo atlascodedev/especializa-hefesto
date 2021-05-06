@@ -78,91 +78,121 @@ export interface Category {
 
 export type DashboardItem = DataCreationItem;
 
-const cardCollection: DashboardItem = {
-  showID: true,
-  collectionRef: "cartas",
-  itemID: "cartas_id",
+const courseCollection: DashboardItem = {
+  collectionRef: "coursesNew",
+  itemID: "courses_id",
   itemCategory: "creation",
   sidebarIcon: "CardTravel",
-  routerPath: "cartas",
-  sidebarLabel: "Cartas contempladas",
+  routerPath: "cursos",
+  sidebarLabel: "Curso",
   hasAttributes: false,
   hasCategories: false,
-  fieldGroups: [
-    { id: "adminGroup", label: "Administradora" },
-    { id: "infoGroup", label: "Informações" },
-    { id: "privateGroup", label: "Campos privados" },
-  ],
+  fieldGroups: [{ id: "infoGroup", label: "Informações" }],
   fields: [
     {
-      groupID: "privateGroup",
-      fieldType: "text",
-      hidden: true,
-      label: "Anotações sobre a carta",
-      name: "cardNotes",
-      private: true,
-      required: false,
+      groupID: "infoGroup",
+      fieldType: "string",
+      label: "Nome do curso",
+      name: "courseName",
     },
 
     {
-      groupID: "adminGroup",
+      groupID: "infoGroup",
       fieldType: "string",
-      label: "Nome da administradora",
-      name: "administradora",
+      label: "Duração do curso",
+      name: "courseDuration",
     },
+
     {
       groupID: "infoGroup",
       fieldType: "select",
-      selectOptions: ["Imóvel", "Automóvel"],
-      label: "Tipo de carta",
-      name: "cardType",
-    },
-    {
-      groupID: "infoGroup",
-      fieldType: "money",
-      label: "Valor do crédito",
-      name: "cardValor",
-    },
-    {
-      groupID: "infoGroup",
-      fieldType: "money",
-      label: "Entrada",
-      name: "cardEntrada",
+      selectOptions: ["Graduação", "Pós-graduação", "Extensão"],
+      label: "Nível do curso",
+      name: "courseLevel",
     },
 
     {
       groupID: "infoGroup",
-      fieldType: "boolean",
-      label: "Alerta de boa oferta",
-      name: "cardDestaque",
-      hidden: true,
-    },
-    {
-      groupID: "infoGroup",
-      fieldType: "boolean",
-      label: "Situação da carta",
-      name: "cardSituation",
-      hidden: true,
-    },
-
-    {
-      groupID: "infoGroup",
-      fieldType: "date",
-      label: "Vencimento",
-      hidden: true,
-      name: "cardExpire",
-    },
-
-    {
-      groupID: "infoGroup",
-      fieldType: "installment",
-      label: "Parcelas",
-      name: "cardInstallment",
+      fieldType: "list",
+      label: "Matriz curricular",
+      name: "courseSyllabus",
       hidden: true,
       listOptions: {
-        fieldLabel: "Saldo",
-        label: "Saldo",
+        fieldLabel: "Nome da máteria",
+        label: "Matriz curricular",
       },
+    },
+
+    {
+      groupID: "infoGroup",
+      fieldType: "text",
+      label: "Descrição do curso",
+      name: "courseDescription",
+      hidden: true,
+    },
+
+    {
+      groupID: "infoGroup",
+      fieldType: "string",
+      label: "Área do curso",
+      name: "courseArea",
+    },
+
+    {
+      groupID: "infoGroup",
+      fieldType: "image",
+      label: "Foto para página do curso",
+      name: "courseImage",
+      hidden: true,
+    },
+
+    {
+      groupID: "infoGroup",
+      fieldType: "image",
+      label: "Foto do certificado de E-MEC",
+      name: "courseEmecPicture",
+      hidden: true,
+    },
+
+    {
+      groupID: "infoGroup",
+      fieldType: "string",
+      label: "Link para página de certificado de E-MEC",
+      name: "courseEmecURL",
+      hidden: true,
+    },
+  ],
+};
+
+const serviceCollection: DashboardItem = {
+  collectionRef: "services",
+  sidebarIcon: "AccountBox",
+  routerPath: "servicos",
+  sidebarLabel: "Serviço",
+  itemCategory: "creation",
+  itemID: "servicesEspecializa",
+  fieldGroups: [{ id: "info", label: "Conteúdo" }],
+  fields: [
+    {
+      fieldType: "string",
+      label: "Nome do serviço",
+      name: "serviceName",
+      groupID: "info",
+      slug: true,
+    },
+    {
+      fieldType: "image",
+      label: "Foto principal",
+      name: "servicePicture",
+      groupID: "info",
+      hidden: true,
+    },
+    {
+      fieldType: "markdown",
+      label: "Conteúdo da página",
+      name: "serviceContent",
+      groupID: "info",
+      hidden: true,
     },
   ],
 };
@@ -217,7 +247,6 @@ const blogCollection: DashboardItem = {
 };
 
 const testimonialCollection: DashboardItem = {
-  showID: true,
   collectionRef: "testimonials",
   itemCategory: "creation",
   itemID: "portalTestimonials",
@@ -250,8 +279,8 @@ const testimonialCollection: DashboardItem = {
     {
       groupID: "infoTestimonial",
       fieldType: "string",
-      label: "Cidade/Estado",
-      name: "testimonialLocation",
+      label: "Cargo/empresa",
+      name: "testimonialCompany",
       hidden: true,
     },
   ],
@@ -280,31 +309,17 @@ const partnersCollection: DashboardItem = {
       hidden: true,
     },
     {
-      fieldType: "list",
-      label: "Lista",
-      name: "simpleList",
+      fieldType: "string",
+      label: "Website do parceiro",
+      name: "partnerWebsite",
       groupID: "partnerInfo",
-      listOptions: {
-        fieldLabel: "Nome do ingrediente",
-        label: "Lista de ingredientes",
-      },
-      hidden: true,
-    },
-    {
-      fieldType: "installment",
-      label: "Another list",
-      name: "installmentList",
-      groupID: "partnerInfo",
-      listOptions: {
-        fieldLabel: "Saldo",
-        label: "notused",
-      },
-      hidden: true,
     },
   ],
 };
 
 export const collections: Array<DashboardItem> = [
+  serviceCollection,
+  courseCollection,
   blogCollection,
   testimonialCollection,
   partnersCollection,
