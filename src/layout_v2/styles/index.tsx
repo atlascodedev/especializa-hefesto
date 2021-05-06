@@ -495,6 +495,15 @@ export const AppLayoutRoot = ({
             "success"
           )
         );
+      })
+      .catch((error) => {
+        dispatch(setLoadingFalse());
+        dispatch(
+          globalNotificationCustom(
+            "Processo de sincronização falhou -" + error.message,
+            "error"
+          )
+        );
       });
   };
 
