@@ -1,6 +1,6 @@
 import * as functions from "firebase-functions";
 
-const repositoryName: string = "especializa-hefesto";
+const repositoryName: string = "especializa-nextjs";
 const repositoryOwner: string = "oparin10";
 export const eventType: string = "forge";
 export const workflowBearerKey: string = functions.config().workflow.github.app
