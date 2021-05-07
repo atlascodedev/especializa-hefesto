@@ -146,14 +146,6 @@ const courseCollection: DashboardItem = {
       name: "courseImage",
       hidden: true,
     },
-
-    {
-      groupID: "infoGroup",
-      fieldType: "image",
-      label: "Foto do certificado de E-MEC",
-      name: "courseEmecPicture",
-      hidden: true,
-    },
   ],
 };
 
