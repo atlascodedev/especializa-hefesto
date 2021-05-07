@@ -94,6 +94,7 @@ const courseCollection: DashboardItem = {
       fieldType: "string",
       label: "Nome do curso",
       name: "courseName",
+      slug: true,
     },
 
     {
@@ -151,14 +152,6 @@ const courseCollection: DashboardItem = {
       fieldType: "image",
       label: "Foto do certificado de E-MEC",
       name: "courseEmecPicture",
-      hidden: true,
-    },
-
-    {
-      groupID: "infoGroup",
-      fieldType: "string",
-      label: "Link para página de certificado de E-MEC",
-      name: "courseEmecURL",
       hidden: true,
     },
   ],
